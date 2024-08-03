@@ -13,6 +13,7 @@ app.use(express.static('public'))
 
 const router = require("./routes/client/index.route");
 
+// router
 router(app);
 
 app.listen(port, () => {
