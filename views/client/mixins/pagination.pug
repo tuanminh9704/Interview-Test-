@@ -1,0 +1,10 @@
+mixin pagination(objectPaginationInit)
+  div.pagination
+    if(objectPaginationInit.currentPage > 1)
+      button(button-pagination=objectPaginationInit.currentPage - 1) Previous
+
+    - for(let i = 1; i <= objectPaginationInit.totalPage; i++)
+          button(button-pagination=i class=`${objectPaginationInit.currentPage == i ? "active" : ""}`) #{i}
+
+    if(objectPaginationInit.currentPage < objectPaginationInit.totalPage)
+        button(button-pagination=objectPaginationInit.currentPage + 1) Next  

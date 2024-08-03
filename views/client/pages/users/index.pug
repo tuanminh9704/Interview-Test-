@@ -1,0 +1,16 @@
+extends ../../layouts/default.pug
+include ../../mixins/pagination.pug
+
+block main
+  h1 Danh sách người dùng
+  div.container
+    each user in users
+      div.user-card
+        img.user-avatar(src=user.picture.thumbnail alt=user.name)
+        div.user-info
+          p.user-name #{user.name.title} #{user.name.first} #{user.name.last}
+          p.username #{user.login.username}
+    
+    // Phân trang
+    +pagination(objectPaginationInit)
+
